@@ -78,7 +78,7 @@ This endpoint logs in a user with a social media.
 
 `POST https://api.sportsnconnect.com/auth/login`
 
-### URL Parameters
+### Query Parameters
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -101,13 +101,132 @@ This endpoint ask for an email to reset the password.
 
 `POST https://api.sportsnconnect.com/auth/reset-password`
 
-### URL Parameters
+### Parameters
 
 Parameter | Type | Description
 --------- | ---- | -----------
-Email | String | User's email where he wants to receive the reset password email.
+email | String | User's email where he wants to receive the reset password email.
 
 <aside class="success">
 Returns status code 200.
 </aside>
+
+## Register
+
+```json
+{
+    "message": "User successfully registered.",
+    "payload": {
+        "user": {
+            "role_id": "2",
+            "photo_count": "0",
+            "friend_count": "0",
+            "notification_count": "0",
+            "friend_request_count": "0",
+            "blog_count": "0",
+            "topic_count": "0",
+            "group_count": "0",
+            "event_count": "0",
+            "conversation_user_count": "0",
+            "video_count": "0",
+            "active": "1",
+            "confirmed": "1",
+            "notification_email": "1",
+            "privacy": "1",
+            "featured": "0",
+            "hide_online": "0",
+            "approved": "0",
+            "is_social": "0",
+            "has_active_subscription": "0",
+            "receive_message_from_non_friend": "1",
+            "send_email_when_send_message": "1",
+            "request_friend_email": "1",
+            "profile_type_id": "1",
+            "phone": "",
+            "facebook_link": "",
+            "twitter_handle": "",
+            "instagram_handle": "",
+            "strava_handle": "",
+            "linkedin_handle": "",
+            "distance": "0",
+            "level_id": "1",
+            "lat": "0.00000000",
+            "lng": "0.00000000",
+            "kilometer_count": "0",
+            "training_count": "0",
+            "team_count": "0",
+            "state": "",
+            "bike1_id": "0",
+            "is_pro": "0",
+            "social_avatar": "",
+            "magasin": "0",
+            "postal_code": null,
+            "id": 14574,
+            "email": "testuser333@zeg.frj",
+            "password": "$2b$13$0Q2ghOx2iK3nsv.KQ0OLOOIudVYTPH50U0d86P3DLu8AR3ku54PK2",
+            "name": "Vincent Ducloup",
+            "avatar": "https://s3.eu-west-1.amazonaws.com/uploads.bikenconnect.com/folder/1578950761340_tmp-85-1578950760008.png",
+            "photo": "https://s3.eu-west-1.amazonaws.com/uploads.bikenconnect.com/folder/1578950761340_tmp-85-1578950760008.png",
+            "gender": "male",
+            "first_name": "Vincent",
+            "last_name": "Ducloup",
+            "birthday": "2020-09-01",
+            "address": "2 Rue du Moulin",
+            "city": "OK",
+            "country": "oui",
+            "disciplines": "1,2",
+            "code": "",
+            "ip_address": "::ffff:82.248.20.78",
+            "timezone": "",
+            "username": "",
+            "about": "",
+            "lang": "",
+            "cover": "",
+            "created": "2020-01-13T21:26:02.000Z"
+        },
+        "access_token": "the_access_token"
+    },
+    "status": 200
+}
+```
+
+> Error:
+
+```json
+{
+    "message": "Email address already used.",
+    "payload": null,
+    "status": 400
+}
+```
+
+Register the user.
+
+<aside class="notice">
+This request is a multipart form data request.
+</aside>
+
+### HTTP Request
+
+`POST https://api.sportsnconnect.com/auth/register`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+email | String |
+password | String |
+avatar | File |
+first_name | String |
+last_name | String |
+gender | String | 'male' or 'female'
+birthday | String | Has to be UTC date.
+address | String |
+city | String |
+country | String |
+disciplines | [Int] | User's disciplines array.
+license | File | User's license.
+medical_certif | File | User's medical certificate.
+
+# Feed
 
