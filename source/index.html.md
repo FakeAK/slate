@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - auth
   - feed
+  - notifications
   - errors
 
 search: true
