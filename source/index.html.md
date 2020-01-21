@@ -10,6 +10,9 @@ toc_footers:
 
 includes:
   - auth
+  - user
+  - friends
+  - team
   - feed
   - notifications
   - errors
