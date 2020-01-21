@@ -15,6 +15,7 @@ includes:
   - team
   - feed
   - notifications
+  - stores
   - errors
 
 search: true
